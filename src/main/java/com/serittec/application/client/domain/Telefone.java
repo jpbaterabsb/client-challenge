@@ -1,5 +1,7 @@
 package com.serittec.application.client.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,11 +21,13 @@ public class Telefone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne
     private Cliente cliente;
 
     private String numero;
 
+    @JsonProperty("tipo")
     @Enumerated(EnumType.STRING)
     private Tipo tipo;
 }

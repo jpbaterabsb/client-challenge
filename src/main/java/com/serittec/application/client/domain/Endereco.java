@@ -27,6 +27,7 @@ public class Endereco {
     private String logradouro;
     private String bairro;
     private String localidade;
+    private String cep;
 
 
 }
