@@ -28,9 +28,13 @@ public class Cliente {
     @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.PERSIST)
     @JoinColumn(name = "cliente")
     private Endereco endereco;
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn
     private List<Telefone> telefone;
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+
+    @OneToMany( cascade = CascadeType.ALL)
+    @JoinColumn
     private List<Email> email;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
