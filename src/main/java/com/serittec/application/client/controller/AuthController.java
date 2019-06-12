@@ -8,9 +8,11 @@ import com.serittec.application.client.vo.TokenVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.annotation.RequestScope;
 
 @RestController
 @RequestMapping(Path.AUTH)
+@RequestScope
 public class AuthController {
 
     @Autowired
